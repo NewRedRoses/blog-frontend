@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./Index.jsx";
 import Post from "./Components/Post.jsx";
+import Navbar from "./Components/Navbar.jsx";
+import "./Styles/main.css";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Navbar />
     <RouterProvider router={router} />
   </StrictMode>
 );
