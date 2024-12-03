@@ -12,7 +12,9 @@ function Index() {
 
   return (
     <div className="content">
-      <h1>Welcome to Mark's blog</h1>
+      <h1>
+        <i>lutheria</i>
+      </h1>
       <ul className="posts-list-container">
         {posts.map((post) => (
           <li key={post.id} className="posts-list-item">
