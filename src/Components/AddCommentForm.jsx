@@ -5,9 +5,7 @@ export default function AddCommentForm({ url }) {
       <input type="text" name="username" required />
 
       <label htmlFor="message">Your Message:</label>
-      <textarea name="message" id="message" required>
-        test
-      </textarea>
+      <textarea name="message" id="message" required></textarea>
       <button type="submit" className="add-comment-btn">
         Submit
       </button>
