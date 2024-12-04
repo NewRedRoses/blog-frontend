@@ -7,17 +7,6 @@ import { MessageSquareDashed } from "lucide-react";
 export default function Comments({ postId }) {
   const [comments, setComments] = useState([]);
   const url = `http://localhost:3000/posts/${postId}` + `/comments`;
-  const data = [
-    { msg: "wow this is sooo true", user: "Heimerdinger" },
-    { msg: "sample test", user: "sample guy" },
-    { msg: "reddit moment", user: "annoying guy" },
-    { msg: "Skibidi toilet", user: "skibidi toilet" },
-    {
-      msg: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo assumenda distinctio. Hic inventore et repellendus pariatur sit itaque eum nemo laboriosam consequuntur a modi cum, voluptatem similique ipsam cupiditate?",
-      user: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, amet?",
-    },
-  ];
-  const mockDate = new Date();
 
   useEffect(() => {
     fetch(url)
