@@ -16,7 +16,7 @@ export default function Post() {
       <h1>{post.title}</h1>
       <p>{post.content}</p>
       <div className="comments-container">
-        <Comments />
+        <Comments postId={postId} />
       </div>
     </div>
   );

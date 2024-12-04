@@ -1,9 +1,12 @@
 import AddCommentForm from "./AddCommentForm";
 import Comment from "./Comment";
 import "../Styles/comments.css";
+import { useEffect, useState } from "react";
 
-export default function Comments() {
-  const comments = [
+export default function Comments({ postId }) {
+  const [comments, setComments] = useState([]);
+  const url = `http://localhost:3000/posts/${postId}` + `/comments`;
+  const data = [
     { msg: "wow this is sooo true", user: "Heimerdinger" },
     { msg: "sample test", user: "sample guy" },
     { msg: "reddit moment", user: "annoying guy" },
@@ -14,23 +17,35 @@ export default function Comments() {
     },
   ];
   const mockDate = new Date();
+
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setComments(data));
+  }, [url]);
   return (
     <>
       <h2>Comments</h2>
       <AddCommentForm />
-      <ul className="list-of-comments">
-        {comments.map((comment, index) => {
-          return (
-            <li key={index}>
-              <Comment
-                author={comment.user}
-                text={comment.msg}
-                date={mockDate.toDateString()}
-              />
-            </li>
-          );
-        })}
-      </ul>
+      {comments.length != 0 ? (
+        <ul className="list-of-comments">
+          {comments.map((comment) => {
+            return (
+              <li key={comment.id}>
+                <Comment
+                  author={comment.username}
+                  text={comment.text}
+                  date={comment.date_created}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className="no-comments-message">
+          This post does not have any comments.
+        </div>
+      )}
     </>
   );
 }
