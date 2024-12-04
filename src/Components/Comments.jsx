@@ -16,7 +16,7 @@ export default function Comments({ postId }) {
   return (
     <>
       <h2>Comments</h2>
-      <AddCommentForm />
+      <AddCommentForm url={url} />
       {comments.length != 0 ? (
         <ul className="list-of-comments">
           {comments.map((comment) => {
