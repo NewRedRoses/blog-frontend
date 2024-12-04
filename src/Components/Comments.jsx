@@ -2,6 +2,7 @@ import AddCommentForm from "./AddCommentForm";
 import Comment from "./Comment";
 import "../Styles/comments.css";
 import { useEffect, useState } from "react";
+import { MessageSquareDashed } from "lucide-react";
 
 export default function Comments({ postId }) {
   const [comments, setComments] = useState([]);
@@ -43,7 +44,8 @@ export default function Comments({ postId }) {
         </ul>
       ) : (
         <div className="no-comments-message">
-          This post does not have any comments.
+          <MessageSquareDashed className="no-comments-icon" />
+          <span>No comments yet...</span>
         </div>
       )}
     </>

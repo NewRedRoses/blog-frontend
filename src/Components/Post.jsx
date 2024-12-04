@@ -13,8 +13,8 @@ export default function Post() {
 
   return (
     <div className="content">
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <h1 className="post-title">{post.title}</h1>
+      <div className="post-body">{post.content}</div>
       <div className="comments-container">
         <Comments postId={postId} />
       </div>
