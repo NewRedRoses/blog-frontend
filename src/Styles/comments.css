@@ -1,13 +1,13 @@
 .comments-container {
   margin-top: 40px;
-  border-top: 1px solid var(--primary-color-alt);
+  border-top: 0.5px solid var(--primary-color-alt);
 }
 .add-comment-form {
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding-bottom: 15px;
-  border-bottom: 1px solid var(--primary-color-alt);
+  border-bottom: 0.5px solid var(--primary-color-alt);
 }
 .add-comment-form input,
 .add-comment-form textarea,

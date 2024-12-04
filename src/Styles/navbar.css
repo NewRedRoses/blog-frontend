@@ -2,5 +2,8 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid var(--secondary-color-alt);
+  border-bottom: 0.5px solid var(--primary-color-alt);
+}
+.navbar-icon {
+  height: 2.5em;
 }
