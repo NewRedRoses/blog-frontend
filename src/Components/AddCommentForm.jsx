@@ -1,7 +1,7 @@
 export default function AddCommentForm({ url }) {
   return (
     <form action={url} method="POST" className="add-comment-form">
-      <label htmlFor="username">Your Name</label>
+      <label htmlFor="username">Your Name:</label>
       <input type="text" name="username" required />
 
       <label htmlFor="message">Your Message:</label>
