@@ -25,7 +25,7 @@ export default function Comments({ postId }) {
                 <Comment
                   author={comment.username}
                   text={comment.text}
-                  date={comment.date_created}
+                  rawDate={comment.date_created}
                 />
               </li>
             );
