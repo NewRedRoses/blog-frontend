@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./Index.jsx";
 import Post from "./Components/Post.jsx";
 import Navbar from "./Components/Navbar.jsx";
+import About from "./Components/About.jsx";
 import "./Styles/main.css";
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "posts/:postId",
     element: <Post />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
 ]);
 
