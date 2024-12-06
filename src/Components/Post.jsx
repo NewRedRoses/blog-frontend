@@ -13,10 +13,12 @@ export default function Post() {
     user: { name: "" },
     date_published: new Date(),
   });
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:3000/posts/${postId}`)
       .then((response) => response.json())
-      .then((data) => setPost(data));
+      .then((data) => setPost(data))
+      .then(() => setLoading(false));
   }, []);
 
   return (
@@ -36,9 +38,13 @@ export default function Post() {
       </div>
       <div className="post-body">{parse(post.content)}</div>
 
-      <div className="comments-container">
-        <Comments postId={postId} />
-      </div>
+      {isLoading ? (
+        "waiting..."
+      ) : (
+        <div className="comments-container">
+          <Comments postId={postId} />
+        </div>
+      )}
     </div>
   );
 }
