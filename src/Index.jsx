@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Styles/index.css";
+import { format } from "date-fns";
 function Index() {
   const [posts, setPosts] = useState([]);
 
@@ -18,7 +19,9 @@ function Index() {
       <ul className="posts-list-container">
         {posts.map((post) => (
           <li key={post.id} className="posts-list-item">
-            <span className="posts-list-item-date">2024-12-3</span>
+            <span className="posts-list-item-date">
+              {format(post.date_published, "MM-dd-yyyy")}
+            </span>
             <Link to={"/posts/" + post.id} className="posts-list-item-link">
               {post.title}
             </Link>
