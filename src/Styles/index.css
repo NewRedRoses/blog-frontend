@@ -46,3 +46,7 @@
   align-items: center;
   gap: 5px;
 }
+.post-body blockquote {
+  border-left: 5px solid var(--primary-color-alt);
+  padding-left: 15px;
+}
