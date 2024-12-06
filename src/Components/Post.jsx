@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Comments from "./Comments";
 import parse from "html-react-parser";
-import { Shell } from "lucide-react";
+import { BookCheck, Shell } from "lucide-react";
 import { format } from "date-fns";
 
 export default function Post() {
@@ -24,11 +24,12 @@ export default function Post() {
       <div className="post-header">
         <h1 className="post-title">{post.title}</h1>
         <div className="post-details">
-          <div className="post-author">
+          <div className="post-author" aria-label="author">
             <Shell className="profile-picture" />
             {post.user.name}
           </div>
-          <div className="post-date-published">
+          <div className="post-date-published" aria-label="date published">
+            <BookCheck />
             {format(post.date_published, "PP (p)")}
           </div>
         </div>

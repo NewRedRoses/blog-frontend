@@ -41,7 +41,8 @@
   color: var(--secondary-color-alt);
   font-weight: bold;
 }
-.post-author {
+.post-author,
+.post-date-published {
   display: flex;
   align-items: center;
   gap: 5px;
