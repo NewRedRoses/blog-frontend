@@ -23,9 +23,26 @@
   text-transform: uppercase;
 }
 .post-body {
+  min-height: 250px;
   font-size: 1.5em;
   margin: 0;
 }
 .post-title {
   margin: 10px 0;
+}
+.post-header {
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid var(--primary-color-alt);
+}
+.post-details {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: var(--secondary-color-alt);
+  font-weight: bold;
+}
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
