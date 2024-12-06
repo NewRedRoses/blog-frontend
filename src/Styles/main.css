@@ -34,5 +34,5 @@ a:hover {
   color: var(--secondary-color-alt);
 }
 li::marker {
-  color: var(--secondary-color-alt);
+  color: var(--primary-color-alt);
 }
