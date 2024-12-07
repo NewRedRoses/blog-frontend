@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function AddCommentForm({ url }) {
+export default function AddCommentForm({ url, comments, setComments }) {
   const [form, setForm] = useState({ username: "", message: "" });
 
   async function handleSubmit(e) {
@@ -33,7 +33,6 @@ export default function AddCommentForm({ url }) {
         onChange={(e) => setForm({ ...form, username: e.target.value })}
         required
       />
-      {console.log}
       <label htmlFor="message">Your Message:</label>
       <textarea
         name="message"
