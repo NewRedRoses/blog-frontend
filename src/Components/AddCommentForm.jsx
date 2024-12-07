@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function AddCommentForm({ url, comments, setComments }) {
   const [form, setForm] = useState({ username: "", message: "" });
-
+  const navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -16,7 +17,7 @@ export default function AddCommentForm({ url, comments, setComments }) {
     // Submit POST request
     await fetch(url, options);
     // Refresh (ideally use states but that will be for ... later)
-    window.location.reload(false);
+    navigate(0);
   }
   return (
     <form
