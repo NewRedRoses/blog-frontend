@@ -5,11 +5,13 @@ import { format } from "date-fns";
 function Index({ backendUrl }) {
   const [posts, setPosts] = useState([]);
 
+  const postsUrl = `${backendUrl}/posts`;
+
   useEffect(() => {
-    fetch(backendUrl + "posts")
+    fetch(postsUrl)
       .then((response) => response.json())
       .then((data) => setPosts(data));
-  }, []);
+  }, [postsUrl]);
 
   return (
     <div className="content">
