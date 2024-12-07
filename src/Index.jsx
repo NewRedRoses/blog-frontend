@@ -5,7 +5,7 @@ import { format } from "date-fns";
 function Index({ backendUrl }) {
   const [posts, setPosts] = useState([]);
 
-  const postsUrl = `${backendUrl}/posts`;
+  const postsUrl = `${backendUrl}posts`;
 
   useEffect(() => {
     fetch(postsUrl)
