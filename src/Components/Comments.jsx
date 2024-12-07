@@ -4,9 +4,9 @@ import "../Styles/comments.css";
 import { useEffect, useState } from "react";
 import { MessageSquareDashed } from "lucide-react";
 
-export default function Comments({ postId }) {
+export default function Comments({ postId, backendUrl }) {
   const [comments, setComments] = useState([]);
-  const url = `http://localhost:3000/posts/${postId}` + `/comments`;
+  const url = `${backendUrl}/posts/${postId}/comments`;
 
   useEffect(() => {
     fetch(url)

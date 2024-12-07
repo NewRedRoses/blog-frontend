@@ -5,7 +5,7 @@ import parse from "html-react-parser";
 import { BookCheck, Shell } from "lucide-react";
 import { format } from "date-fns";
 
-export default function Post() {
+export default function Post({ backendUrl }) {
   const { postId } = useParams();
   const [post, setPost] = useState({
     title: "loading...",
@@ -15,7 +15,7 @@ export default function Post() {
   });
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:3000/posts/${postId}`)
+    fetch(backendUrl + `/posts/${postId}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
       .then(() => setLoading(false));
@@ -37,12 +37,11 @@ export default function Post() {
         </div>
       </div>
       <div className="post-body">{parse(post.content)}</div>
-
       {isLoading ? (
         "waiting..."
       ) : (
         <div className="comments-container">
-          <Comments postId={postId} />
+          <Comments postId={postId} backendUrl={backendUrl} />
         </div>
       )}
     </div>

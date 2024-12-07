@@ -7,14 +7,16 @@ import Navbar from "./Components/Navbar.jsx";
 import About from "./Components/About.jsx";
 import "./Styles/main.css";
 
+const backendUrl = "https://blog-backend-production-347b.up.railway.app/";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    element: <Index backendUrl={backendUrl} />,
   },
   {
     path: "posts/:postId",
-    element: <Post />,
+    element: <Post backendUrl={backendUrl} />,
   },
   {
     path: "/about",
