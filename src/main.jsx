@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar.jsx";
 import About from "./Components/About.jsx";
 import "./Styles/main.css";
 
+// TIP: ensure that url ends with /
 const backendUrl = "https://blog-backend-production-347b.up.railway.app/";
 
 const router = createBrowserRouter([

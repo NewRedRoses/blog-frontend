@@ -6,17 +6,18 @@ import { MessageSquareDashed } from "lucide-react";
 
 export default function Comments({ postId, backendUrl }) {
   const [comments, setComments] = useState([]);
-  const url = `${backendUrl}/posts/${postId}/comments`;
+
+  const commentsUrl = `${backendUrl}/comments`;
 
   useEffect(() => {
-    fetch(url)
+    fetch(commentsUrl)
       .then((response) => response.json())
       .then((data) => setComments(data));
-  }, [url]);
+  }, [commentsUrl]);
   return (
     <>
       <h2>Comments</h2>
-      <AddCommentForm url={url} />
+      <AddCommentForm url={commentsUrl} />
       {comments.length != 0 ? (
         <ul className="list-of-comments">
           {comments.map((comment) => {

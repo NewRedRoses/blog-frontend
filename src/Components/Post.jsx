@@ -13,13 +13,15 @@ export default function Post({ backendUrl }) {
     user: { name: "" },
     date_published: new Date(),
   });
+  const url = `${backendUrl}posts/${postId}`;
   const [isLoading, setLoading] = useState(true);
+
   useEffect(() => {
-    fetch(backendUrl + `/posts/${postId}`)
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setPost(data))
       .then(() => setLoading(false));
-  }, []);
+  }, [url]);
 
   return (
     <div className="content">
@@ -41,7 +43,7 @@ export default function Post({ backendUrl }) {
         "waiting..."
       ) : (
         <div className="comments-container">
-          <Comments postId={postId} backendUrl={backendUrl} />
+          <Comments postId={postId} backendUrl={url} />
         </div>
       )}
     </div>
