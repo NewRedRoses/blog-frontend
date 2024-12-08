@@ -1,4 +1,22 @@
+import "../Styles/about.css";
 export default function About() {
+  const links = [
+    {
+      label: "Email:",
+      url: "mailto:mark@lutheria.blog",
+      word: "mark@lutheria.blog",
+    },
+    {
+      label: "Github:",
+      url: "https://github.com/NewRedRoses",
+      word: "NewRedRoses",
+    },
+    {
+      label: "Photography (IG):",
+      url: "https://www.instagram.com/smoochychasm/",
+      word: "SmoochyChasm",
+    },
+  ];
   return (
     <div className="content">
       <h1>About</h1>
@@ -10,6 +28,22 @@ export default function About() {
         Initially this project came about practicing REST API stuff but I plan
         on growing it more into a fleshed out blog.
       </p>
+      <div className="contact-container">
+        <h1>Reaching Out</h1>
+        <p>Below are some ways you can get in touch with me.</p>
+        <ul className="contact-list">
+          {links.map((link, index) => {
+            return (
+              <li className="contact-list-item" key={index}>
+                {link.label}
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.word}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

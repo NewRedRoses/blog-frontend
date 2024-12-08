@@ -1,0 +1,13 @@
+ul.contact-list {
+  list-style-type: circle;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-list-item {
+  display: flex;
+  gap: 5px;
+}
+.contact-list-item a {
+  text-decoration: underline;
+}
