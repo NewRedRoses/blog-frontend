@@ -1,6 +1,10 @@
 import { DotLoader } from "react-spinners";
 
-export default function Spinner({ spinnerColor, animationSpeed, msg }) {
+export default function Spinner({
+  spinnerColor = "#4f5d75",
+  animationSpeed = 1,
+  msg = "Loading...",
+}) {
   return (
     <div className="loading-msg-container">
       <DotLoader
