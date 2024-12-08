@@ -4,6 +4,7 @@ import Comments from "./Comments";
 import parse from "html-react-parser";
 import { BookCheck, Shell } from "lucide-react";
 import { format } from "date-fns";
+import Spinner from "./Spinner";
 
 export default function Post({ backendUrl }) {
   const { postId } = useParams();
@@ -40,7 +41,7 @@ export default function Post({ backendUrl }) {
       </div>
       <div className="post-body">{parse(post.content)}</div>
       {isLoading ? (
-        "waiting..."
+        <Spinner msg="Loading Comments..." />
       ) : (
         <div className="comments-container">
           <Comments postId={postId} backendUrl={url} />
