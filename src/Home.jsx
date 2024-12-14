@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Styles/index.css";
 import { format } from "date-fns";
 import Spinner from "./Components/Spinner.jsx";
+import { Helmet } from "react-helmet";
 export default function Home({ backendUrl }) {
   const [posts, setPosts] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -18,6 +19,9 @@ export default function Home({ backendUrl }) {
   return (
     <>
       <div className="content">
+        <Helmet>
+          <title>Posts - Lutheria</title>
+        </Helmet>
         <h1>
           <i>lutheria</i>
         </h1>

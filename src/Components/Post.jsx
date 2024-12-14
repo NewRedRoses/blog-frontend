@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 import { BookCheck, Shell } from "lucide-react";
 import { format } from "date-fns";
 import Spinner from "./Spinner";
+import { Helmet } from "react-helmet";
 
 export default function Post({ backendUrl }) {
   const { postId } = useParams();
@@ -26,6 +27,9 @@ export default function Post({ backendUrl }) {
 
   return (
     <div className="content">
+      <Helmet>
+        <title>{post.title} - Lutheria</title>
+      </Helmet>
       <div className="post-header">
         <h1 className="post-title">{post.title}</h1>
         <div className="post-details">

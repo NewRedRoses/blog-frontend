@@ -1,4 +1,5 @@
 import "../Styles/about.css";
+import { Helmet } from "react-helmet";
 export default function About() {
   const links = [
     {
@@ -19,6 +20,9 @@ export default function About() {
   ];
   return (
     <div className="content">
+      <Helmet>
+        <title>About - Lutheria</title>
+      </Helmet>
       <h1>About</h1>
       <p>
         Hello! My name&apos;s <b>Mark</b> and this is a simple blog site where I
